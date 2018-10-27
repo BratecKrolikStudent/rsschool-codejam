@@ -1,7 +1,7 @@
-const expect = require('chai').expect;
+const { expect } = require('chai');
 const make = require('./../make');
 
-describe("make test", function() {
+describe('make test', function() {
   it('should work with RS example', function () {
     function sum(a, b) {
       return a + b;

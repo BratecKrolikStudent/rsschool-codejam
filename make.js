@@ -1,26 +1,24 @@
-module.exports = (function () {
+const make = (function make() {
   let arr = [];
 
-  let fc = function (...arg) {
+  const fc = function closureFunc(...arg) {
     let res = null;
-    let isFunc = arg[0] instanceof Function;
+    const isFunc = arg[0] instanceof Function;
 
     if (!isFunc) {
       arr = [...arr, ...arg];
       res = fc;
-    }
-    else {
-      if (arr.length !== 0) {
-        res = arr.reduce(arg[0]);
-        arr = [];
-      }
-      else {
-        res = 0;
-      }
+    } else if (arr.length !== 0) {
+      res = arr.reduce(arg[0]);
+      arr = [];
+    } else {
+      res = 0;
     }
 
     return res;
-  }
+  };
 
   return fc;
-})()
+}());
+
+module.exports = make;

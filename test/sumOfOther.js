@@ -1,7 +1,7 @@
-const expect = require('chai').expect;
+const { expect } = require('chai');
 const sumOfOther = require('./../sumOfOther');
 
-describe("sumOfOther test", function() {
+describe('sumOfOther test', function () {
   it('should work with RS example', function () {
     let numbers = [2, 3, 4, 1];
     expect(sumOfOther(numbers)).to.deep.equal([8, 7, 6, 9]);

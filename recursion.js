@@ -1,18 +1,21 @@
-module.exports = (function () {
+module.exports = (function recursion() {
   let arr = [];
 
-  let fc = function (tree, node = 0) {
+  const fc = function fc(tree, node = 0) {
+    let res = null;
+
     if (node === 0) arr = [];
     if (!tree || !tree.value) {
-      return arr;
-    }
-    else {
-      if (!arr[node]) arr[node] = [];
+      res = arr;
+    } else {
+      if (!arr[node]) {
+        arr[node] = [];
+      }
       arr[node] = [...arr[node], tree.value].sort((a, b) => a - b);
     }
 
-    return fc(tree.right, node + 1), fc(tree.left, node + 1);
-  }
+    return !res ? (fc(tree.right, node + 1), fc(tree.left, node + 1)) : res;
+  };
 
   return fc;
-})();
+}());
