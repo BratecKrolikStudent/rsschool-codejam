@@ -1,0 +1,24 @@
+{
+  "name": "rsschool-codejam",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BratecKrolikStudent/rsschool-codejam.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BratecKrolikStudent/rsschool-codejam/issues"
+  },
+  "homepage": "https://github.com/BratecKrolikStudent/rsschool-codejam#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "5.2.0"
+  }
+}
