@@ -1,14 +1,16 @@
-const { expect } = require('chai');
-const make = require('./../make');
+const {
+  expect,
+} = require('chai');
+const make = require('./../src/make');
 
-describe('make test', function() {
-  it('should work with RS example', function () {
+describe('make test', () => {
+  it('should work with RS example', () => {
     function sum(a, b) {
       return a + b;
     }
     expect(make(15)(34, 21, 666)(41)(sum)).to.equal(777);
   });
-  it('should work with different params', function () {
+  it('should work with different params', () => {
     function sum(a, b) {
       return a + b;
     }
@@ -25,11 +27,11 @@ describe('make test', function() {
     expect(make(100, 5)(14, 4)(2)(sub)).to.equal(75);
     expect(make(2, 2)(1)(3, 3, 3)(mul)).to.equal(108);
   });
-  it('should work without parameters', function () {
+  it('should work without parameters', () => {
     function sum(a, b) {
       return a + b;
     }
     expect(make()(sum)).to.equal(0);
     expect(make()()()()(sum)).to.equal(0);
-  })
+  });
 });
